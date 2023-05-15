@@ -1,7 +1,7 @@
 # Campbell_Python_Portfolio
 This is the portfolio of python code that I learned during BISC 450C. 
 
-Using Jupyter Notebooks 1 & 2
+## Using Jupyter Notebooks 1 & 2
 
 ```python
 %matplotlib inline
