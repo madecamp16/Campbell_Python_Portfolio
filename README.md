@@ -26,8 +26,6 @@ df.head()
 ```
 
 
-
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -92,7 +90,6 @@ df.tail()
 ```
 
 
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -163,7 +160,7 @@ df.head()
 
 
 
-</style>
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -258,9 +255,6 @@ df.loc[non_numeric_profits].head()
 ```
 
 
-
-
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -348,8 +342,92 @@ len(df.profit[non_numeric_profits])
 bin_sizes, _, _ = plt.hist(df.year[non_numeric_profits], bins= range(1955, 2006))
 ```
 
-![output_11_0](https://github.com/madecamp16/Campbell_Python_Portfolio/assets/133256588/da608b89-c2f8-4c0f-be38-47bd8595e912)
+![output_11_0](https://github.com/madecamp16/Campbell_Python_Portfolio/assets/133256588/49c6b79d-9b64-4584-aa79-dc78f87d8554)
 
+
+
+```python
+df = df.loc[~non_numeric_profits]
+df.profit = df.profit.apply(pd.to_numeric) 
+```
+
+
+```python
+len(df)
+```
+
+
+
+
+    25131
+
+
+
+
+```python
+df.dtypes
+```
+
+
+
+
+    year         int64
+    rank         int64
+    company     object
+    revenue    float64
+    profit     float64
+    dtype: object
+
+
+
+
+```python
+group_by_year = df.loc[:, ['year', 'revenue', 'profit']].groupby('year') 
+avgs = group_by_year.mean()
+x = avgs.index
+y1 = avgs.profit
+def plot(x, y, ax, title, y_label):
+    ax.set_title(title)
+    ax.set_ylabel(y_label)
+    ax.plot(x, y)
+    ax.margins(x = 0, y = 0) 
+```
+
+
+```python
+fig, ax = plt.subplots()
+plot(x, y1, ax, 'Increase in mean Fortune 500 company profits from 1955 to 2005', 'Profits (millions)') 
+```
+
+![output_16_0](https://github.com/madecamp16/Campbell_Python_Portfolio/assets/133256588/513e3dc1-7af8-4fab-972b-fc2064310490)
+
+
+
+```python
+y2 = avgs.revenue
+fig, ax = plt.subplots()
+plot(x, y2, ax, 'Increase in mean Fortune 500 company revenues from 1955 to 2005', 'Revenue (millions)') 
+```
+
+![output_17_0](https://github.com/madecamp16/Campbell_Python_Portfolio/assets/133256588/17781b89-2c2d-4cc1-8f74-942e9245cbfa)
+
+
+
+```python
+def plot_with_std(x, y, stds, ax, title, y_label):
+    ax.fill_between(x, y - stds, y + stds, alpha = 0.2)
+    plot(x, y, ax, title, y_label)
+fig, (ax1, ax2) = plt.subplots(ncols = 2) 
+title = 'Increase in meand and std Fortune 500 Company %s from 1955 to 2005'
+stds1 = group_by_year.std().profit.values
+stds2 = group_by_year.std().revenue.values 
+plot_with_std(x, y1.values, stds1, ax1, title % 'profits', 'Profit (millions)') 
+plot_with_std(x, y2.values, stds2, ax2, title % 'revenues', 'Revenue (millions)') 
+fig.set_size_inches(14,4) 
+fig.tight_layout() 
+```
+
+![output_18_0](https://github.com/madecamp16/Campbell_Python_Portfolio/assets/133256588/14003266-7f12-479a-9fec-930cc0629357)
 
 
 
