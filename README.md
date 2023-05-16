@@ -1111,23 +1111,16 @@ for filename in filenames:
 
     inflammation-01.csv
 
-
-
-![png](output_2_1.png)
+![output_2_1](https://github.com/madecamp16/Campbell_Python_Portfolio/assets/133256588/e79dffa2-7f1e-44d7-a47b-d3f211dac2b6)
 
 
     inflammation-02.csv
 
-
-
-![png](output_2_3.png)
-
+![output_2_3](https://github.com/madecamp16/Campbell_Python_Portfolio/assets/133256588/dddd1544-438c-4263-bf69-7dbedb60c60b)
 
     inflammation-03.csv
 
-
-
-![png](output_2_5.png)
+![output_2_5](https://github.com/madecamp16/Campbell_Python_Portfolio/assets/133256588/8e46a78e-84ec-478e-9084-74d392fb3139)
 
 
 
