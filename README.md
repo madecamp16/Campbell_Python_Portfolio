@@ -745,8 +745,8 @@ image = matplotlib.pyplot.imshow(data)
 matplotlib.pyplot.show() 
 ```
 
+![output_1_0](https://github.com/madecamp16/Campbell_Python_Portfolio/assets/133256588/827185fd-9d35-43f9-bbd1-c6312027f888)
 
-![png](output_1_0.png)
 
 
 
@@ -758,8 +758,8 @@ ave_plot = matplotlib.pyplot.plot(ave_inflammation)
 matplotlib.pyplot.show() 
 ```
 
+![output_2_0](https://github.com/madecamp16/Campbell_Python_Portfolio/assets/133256588/da8e654b-aebe-49e5-a65a-b700b2af8509)
 
-![png](output_2_0.png)
 
 
 
@@ -770,8 +770,7 @@ max_plot = matplotlib.pyplot.plot(numpy.amax(data, axis = 0))
 matplotlib.pyplot.show()
 ```
 
-
-![png](output_4_0.png)
+![output_4_0](https://github.com/madecamp16/Campbell_Python_Portfolio/assets/133256588/baf0b9ca-4b27-4f46-83eb-cb9977f574f5)
 
 
 
@@ -779,9 +778,7 @@ matplotlib.pyplot.show()
 min_plot = matplotlib.pyplot.plot(numpy.amin(data, axis = 0)) 
 matplotlib.pyplot.show()  
 ```
-
-
-![png](output_5_0.png)
+![output_5_0](https://github.com/madecamp16/Campbell_Python_Portfolio/assets/133256588/83c6fc09-c39a-42aa-bb68-e3e89a56e5f3)
 
 
 
@@ -807,9 +804,7 @@ matplotlib.pyplot.savefig('inflammation.png')
 matplotlib.pyplot.show() 
 
 ```
-
-
-![png](output_6_0.png)
+![output_6_0](https://github.com/madecamp16/Campbell_Python_Portfolio/assets/133256588/8649d085-d258-4e70-bde0-93b6444b4df3)
 
 
 
